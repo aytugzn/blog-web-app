@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="form-header">
+            <%= heading %>
+        </h1>
+        <% if (locals.post) { %>
+            <form id="edit-form" name="editForm" method="POST" action="/api/posts/<%=post.id%>">
+                <input class="title-input" name="title" type="text" value="<%= post.title %>" required />
+                <textarea class="text-content" name="content" required><%= post.content %></textarea>
+                <button class="btn edit-btn" name="editButton" type="submit">
+                    <%= submit %>
+                </button>
+            </form>
+
+            <% } else {%>
+                <form id="edit-form" name="createForm" method="POST" action="/api/posts">
+                    <input class="title-input" name="title" type="text" required />
+                    <textarea class="text-content" name="content" required></textarea>
+                    <button class="btn edit-btn" name="createButton" type="submit">
+                        <%= submit %>
+                    </button>
+                </form>
+                <% } %>
+    </div>
+</body>
+
+</html>

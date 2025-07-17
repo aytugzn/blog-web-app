@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #005f73;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    width: 50%;
+    background-color: #0a9396;
+    box-shadow:
+  3px 0 0.4em#94d2bd,
+  -3px 0 0.4em #94d2bd;
+  padding: 20px;
+}
+
+.post-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post-list li{
+    border: 1px solid #e9d8a6;
+    border-radius: 5px;
+    margin: 10px 0 10px;
+    padding: 10px ;
+    background-color: #94d2bd;
+    box-shadow:
+  3px 0 0.4em#e9d8a6,
+  -3px 0 0.4em #e9d8a6;
+}
+
+.content-text{
+    margin-top: 17px;
+    word-break: break-word;
+}
+
+hr{
+    border: 1px solid #e9d8a6;
+    margin: 15px;
+}
+
+h2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+h1{
+    text-shadow: 2px 2px 10px  #005f73;
+}
+
+h1,h2{
+    font-family: "Inter", sans-serif;
+}
+
+.post-date{
+font-size: small;
+    color:#468faf;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn,.edit-btn{
+    background-color: #0466c8;
+}
+
+.btn:hover , .edit-btn:hover {
+  background-color: #0353a4;
+}
+
+.delete-btn{
+    background-color: #9d0208;
+}
+
+.delete-btn:hover{
+    background-color: #6a040f;
+}
+

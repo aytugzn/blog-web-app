@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Homepage</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="posts-header">
+                <h1>Posts</h1>
+                <a id="newPostBtn" class="btn" href="/new">New Post</a>
+            </div>
+            <hr>
+            <div class="posts-wrap">
+                <% if(locals.post) { %>
+                    <ul class="post-list">
+                        <li>
+
+                            <h2 class="title-text">
+                                <%= post.title %>
+                            </h2>
+
+                            <p class="content-text">
+                                <%= post.content %>
+                            </p>
+
+                            <a class="btn edit-btn" href="/edit/<%= post.id %>">Edit</a>
+                            <a class="btn delete-btn" href="/api/posts/delete/<%= post.id %>">Delete</a>
+                            <p class="post-date">
+                                <%= post.date %>
+                            </p>
+
+                        </li>
+
+                    </ul>
+
+                    <% } else if(locals.posts && locals.posts.length> 0) {%>
+                        <ul class="post-list">
+                            <% posts.forEach((post)=>{ %>
+
+                                <li>
+
+                                    <h2 class="title-text">
+                                        <%= post.title %>
+                                    </h2>
+                                    <p class="post-date">
+                                        <%= post.date %>
+                                    </p>
+
+                                    <p class="content-text">
+                                        <%= post.content %>
+                                    </p>
+
+
+                                    <a class="btn edit-btn" href="/edit/<%= post.id %>">Edit</a>
+                                    <a class="btn delete-btn" href="/api/posts/delete/<%= post.id %>">Delete</a>
+
+
+                                </li>
+
+                                <% });} else { %>
+
+                                    <p class="error-text">No posts found.</p>
+
+                                    <% } %>
+                        </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
