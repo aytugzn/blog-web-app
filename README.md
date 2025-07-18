@@ -33,3 +33,8 @@ Tarayıcıda http://localhost:3000 adresine gidin.
 
 - Anasayfadan yeni post oluşturabilirsiniz.
 - Var olan postları listeleyip, düzenleyebilir veya silebilirsiniz.
+
+- ## 🔗 Canlı Demo
+
+Projeyi canlı olarak görmek için tıkla:  
+[👉 Post Manager - Canlı Demo](https://blog-web-app-aldb.onrender.com/)
