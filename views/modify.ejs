@@ -4,32 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/modify.css" />
     <title>Edit Post</title>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="form-header">
-            <%= heading %>
-        </h1>
-        <% if (locals.post) { %>
-            <form id="edit-form" name="editForm" method="POST" action="/api/posts/<%=post.id%>">
-                <input class="title-input" name="title" type="text" value="<%= post.title %>" required />
-                <textarea class="text-content" name="content" required><%= post.content %></textarea>
-                <button class="btn edit-btn" name="editButton" type="submit">
-                    <%= submit %>
-                </button>
-            </form>
-
-            <% } else {%>
-                <form id="edit-form" name="createForm" method="POST" action="/api/posts">
-                    <input class="title-input" name="title" type="text" required />
-                    <textarea class="text-content" name="content" required></textarea>
-                    <button class="btn edit-btn" name="createButton" type="submit">
+        <div class="wrapper">
+            <h1 class="form-header">
+                <%= heading %>
+            </h1>
+            <hr>
+            <% if (locals.post) { %>
+                <form id="edit-form" name="editForm" method="POST" action="/api/posts/<%=post.id%>">
+                    <input class="title-input" name="title" type="text" value="<%= post.title %>"
+                        placeholder="Post Title.." required />
+                    <textarea class="text-content" name="content" placeholder="Post Content.."
+                        required><%= post.content %></textarea>
+                    <button class="btn edit-btn" name="editButton" type="submit">
                         <%= submit %>
                     </button>
                 </form>
-                <% } %>
+
+                <% } else {%>
+                    <form id="create-form" name="createForm" method="POST" action="/api/posts">
+                        <input class="title-input" name="title" type="text" placeholder="Post Title.." required />
+                        <textarea class="text-content" name="content" placeholder="Post Content.." required></textarea>
+                        <button class="btn edit-btn" name="createButton" type="submit">
+                            <%= submit %>
+                        </button>
+                    </form>
+                    <% } %>
+        </div>
     </div>
 </body>
 

@@ -12,8 +12,11 @@ body{
     align-items: center;
 }
 
+/** CLASSES **/
+
 .wrapper{
     width: 50%;
+    max-width: 600px;
     background-color: #0a9396;
     box-shadow:
   3px 0 0.4em#94d2bd,
@@ -43,23 +46,7 @@ body{
     word-break: break-word;
 }
 
-hr{
-    border: 1px solid #e9d8a6;
-    margin: 15px;
-}
 
-h2{
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-h1{
-    text-shadow: 2px 2px 10px  #005f73;
-}
-
-h1,h2{
-    font-family: "Inter", sans-serif;
-}
 
 .post-date{
 font-size: small;
@@ -80,6 +67,7 @@ font-size: small;
 
 .btn,.edit-btn{
     background-color: #0466c8;
+      border: 1px solid #94d2bd;
 }
 
 .btn:hover , .edit-btn:hover {
@@ -88,9 +76,93 @@ font-size: small;
 
 .delete-btn{
     background-color: #9d0208;
+      border: 1px solid #6a040f;
 }
 
 .delete-btn:hover{
     background-color: #6a040f;
+          border: 1px solid #9d0208;
+}
+
+/** ELEMENTS **/
+
+hr{
+    border: 1px solid #e9d8a6;
+    margin: 15px;
+}
+
+h2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+h1{
+    text-shadow: 2px 2px 10px  #005f73;
+}
+
+h1,h2{
+    font-family: "Inter", sans-serif;
+}
+
+/** MEDIA QUERIES **/
+
+@media (max-width: 768px) {
+
+    .posts-header{
+        text-align: center;
+    }
+
+  .wrapper {
+    width: 90%;
+    padding: 10px;
+  }
+
+  input, textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  h1{
+        font-size: 30px;
+    }
+  
+    h2 {
+    font-size: 20px;
+  }
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+
+}
+
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 95%;
+    padding:5px;
+  }
+
+  .btn {
+    padding: 8px;
+    font-size: 14px;
+      display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  }
+
+h1{
+    font-size: 25px;
+}
+
+ h2 {
+    font-size: 18px;
+  }
+
 }
 
